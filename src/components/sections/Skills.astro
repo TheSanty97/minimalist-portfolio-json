@@ -16,6 +16,10 @@ import Swift from "@/icons/swift.astro"
 import SwiftUI from "@/icons/swiftui.astro"
 import Kotlin from "@/icons/kotlin.astro"
 import Flutter from "@/icons/flutter.astro"
+import Angular from "@/icons/angular.astro"
+import DotNet from "@/icons/dotnet.astro"
+import SqlServer from "@/icons/sqlserver.astro"
+import CSharp from "@/icons/csharp.astro"
 
 const SKILLS_ICONS: Record<string, any> = {
   HTML,
@@ -33,6 +37,10 @@ const SKILLS_ICONS: Record<string, any> = {
   SwiftUI,
   Kotlin,
   Flutter,
+  Angular,
+  DotNet,
+  SqlServer,
+  CSharp,
 }
 ---
 
@@ -40,12 +48,12 @@ const SKILLS_ICONS: Record<string, any> = {
   <ul>
     {
       skills.map(({ name }) => {
-        const iconName = name === "Next.js" ? "Next" : name
+        let iconName = name === "Next.js" ? "Next" : name
         const Icon = SKILLS_ICONS[iconName]
 
         return (
           <li>
-            {Icon && <Icon />} <span>{name}</span>
+            {Icon && <Icon />} <span>{name === "DotNet" ? ".Net" : name}</span>
           </li>
         )
       })
